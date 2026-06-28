@@ -1,197 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wildstar Weddings | Hill Country Wedding Officiant Services</title>
-  <meta name="description" content="Romantic, personal wedding ceremonies in New Braunfels and the Texas Hill Country. Every signature, a story — every vow, a beginning.">
-  <link rel="canonical" href="https://www.wildstarweddings.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Wildstar Weddings | Hill Country Wedding Officiant">
-  <meta property="og:description" content="Romantic, personal wedding ceremonies in New Braunfels and the Texas Hill Country.">
-  <meta property="og:url" content="https://www.wildstarweddings.com/">
-  <meta property="og:image" content="https://www.wildstarweddings.com/assets/img/logo-square.png">
-  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Raleway:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildstar Weddings | Hill Country Wedding Officiant Services</title>
+<meta name="description" content="Romantic, personal wedding ceremonies in New Braunfels and the Texas Hill Country. Every ceremony written by Wren, delivered by a hand-picked team.">
+<link rel="canonical" href="https://www.wildstarweddings.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wildstar Weddings | Hill Country Wedding Officiant">
+<meta property="og:description" content="Romantic, personal wedding ceremonies in New Braunfels and the Texas Hill Country.">
+<meta property="og:url" content="https://www.wildstarweddings.com/">
+<meta property="og:image" content="https://www.wildstarweddings.com/assets/img/logo-square.png">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Raleway:wght@400;500;600&family=PT+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+  /* HOME: paper only on hero + testimonials; each band owns its bg + a colored wavy top */
+  body{background:#f1ebde !important}
+  body::before{display:none !important}
+
+  .band{position:relative}
+  .band::before{content:"";position:absolute;top:0;left:0;width:100%;height:54px;transform:translateY(-99%);z-index:1;background-repeat:no-repeat;background-size:100% 100%}
+  .band>.container{position:relative;z-index:2}
+  .intro::before{display:none}
+  .soft::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 54' preserveAspectRatio='none'%3E%3Cpath fill='%23f4f0e7' d='M0,32 C150,18 350,16 550,27 C800,40 1000,44 1200,31 L1200,54 L0,54 Z'/%3E%3C/svg%3E")}
+  .feels::before{display:none}
+  .testi::before{display:none}
+
+  /* (2) hero — paper, smaller, 46% overlay */
+  .home-hero{position:relative;background:#f1ebde url("/assets/img/unsplash-image-XFWiZTa2Ub0.jpg") center top/cover;text-align:center;padding:clamp(5rem,9vw,7rem) 1.5rem clamp(2.5rem,5vw,4rem)}
+  .home-hero::after{content:"";position:absolute;inset:0;background:rgba(247,243,236,.46);z-index:0;pointer-events:none}
+  .home-hero img{position:relative;z-index:1;width:min(520px,84vw);margin:0 auto}
+
+  /* (3) intro — rings fill the section, faded; text left-aligned */
+  .intro{background:#e7dcc6 url("/assets/img/imgg-gi3-_nzahcmk.png") center/cover;margin-top:-55px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat}
+  .intro::after{content:"";position:absolute;inset:0;background:rgba(231,220,198,.66);z-index:0}
+  .intro .container{text-align:left}
+  .intro .intro-actions{text-align:center;margin-top:1.6rem}
+  .intro .intro-rule{border:none;border-top:1px solid rgba(46,49,49,.3);max-width:760px;margin:1.8rem auto 1.4rem}
+  .intro .intro-badges{display:flex;justify-content:center;gap:1rem}
+  .intro .intro-badges img{height:84px;width:auto}
+
+  /* (4-5) grew + good-fit — soft light, faint bloom */
+  .soft{background:#f4f0e7}
+  .soft::after{content:"";position:absolute;inset:0;background:url("/assets/img/unsplash-image-xepikEyPgmI-2.jpg") right bottom/auto 95% no-repeat;opacity:.9;z-index:0}
+
+  /* (6) what it feels like — green, faded */
+  .feels{background:#a8a76d url("/assets/img/unsplash-image-rfRoZPJ8NOg.jpg") center/cover;color:var(--cream);margin-top:-55px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat}
+  .feels::after{content:"";position:absolute;inset:0;background:rgba(150,158,96,.62);z-index:0}
+  .feels h2{color:#fff}
+  .feels .eyebrow{color:#fff;opacity:.9}
+
+  /* (7-8) testimonials + CTA — paper */
+  .testi{background:#f3ede0 url("/assets/img/unsplash-image-XFWiZTa2Ub0.jpg") center/cover;margin-top:-55px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0,30 C150,18 350,16 550,26 C800,38 1000,42 1200,30 L1200,60 L0,60 Z'/%3E%3C/svg%3E") top/100% 60px no-repeat,linear-gradient(#000 0 0) bottom/100% calc(100% - 55px) no-repeat;
+    margin-bottom:-70px;padding-bottom:clamp(5rem,10vw,8rem)}
+  .testi::after{content:"";position:absolute;inset:0;background:rgba(247,243,236,.46);z-index:0}
+  .testi .rule{border:none;border-top:1px solid rgba(46,49,49,.35);max-width:940px;margin:2.2rem auto 1.6rem}
+  .cta-block{text-align:center}
+</style>
 </head>
 <body>
+<header class="topbar">
+  <a class="topbar__brand" href="/" aria-label="Wildstar Weddings home"><img src="/assets/img/logo-banner.png" alt="Wildstar Weddings"></a>
+  <button class="topbar__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="topbar-nav"><span></span><span></span><span></span></button>
+  <nav id="topbar-nav">
+    <a href="/wedding-packages/">Packages</a>
+    <a href="/faqs/">FAQs</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
 
-  <!-- ============================ HEADER ============================ -->
-  <header class="site-header">
-    <nav class="nav">
-      <a class="nav__brand" href="/" aria-label="Wildstar Weddings home">
-        <img src="/assets/img/logo-banner.png" alt="Wildstar Weddings">
-      </a>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__menu" id="nav-menu">
-        <li><a class="nav__link is-active" href="/">Home</a></li>
-        <li><a class="nav__link" href="/about/">About</a></li>
-        <li><a class="nav__link" href="/wedding-packages/">Packages</a></li>
-        <li><a class="nav__link" href="/gallery/">Gallery</a></li>
-        <li><a class="nav__link" href="/faqs/">FAQs</a></li>
-        <li><a class="nav__link" href="/contact/">Contact</a></li>
-        <li><a class="btn nav__cta" href="/contact/">Check Availability</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- (2) LOGO HERO -->
+<section class="home-hero">
+  <img src="/assets/img/logo-banner.png" alt="Wildstar Weddings">
+</section>
 
-  <!-- ============================= HERO ============================= -->
-  <section class="hero" style="background-image:url('/assets/img/GilmoreWedding.jpeg')">
-    <div class="hero__inner">
-      <span class="eyebrow">Wedding Officiant · Texas Hill Country</span>
-      <h1>Every signature, a story —<br>every vow, a beginning.</h1>
-      <p>Romantic, personal wedding ceremonies in New Braunfels and the Texas Hill Country.</p>
-      <p><a class="btn btn--light" href="/contact/">Check Availability</a></p>
-    </div>
-  </section>
-
-  <!-- ============================ INTRO ============================= -->
-  <section class="section bg-cream text-center">
-    <div class="container narrow">
-      <h2>You don’t need someone to perform your ceremony.</h2>
-      <p class="lead">You need someone who can hold the room while it happens.</p>
-      <p class="lead">I’m a wedding officiant based in Central Texas, creating ceremonies that feel like you.</p>
-      <div class="leaf-divider"><img src="/assets/img/leaf.png" alt=""></div>
-    </div>
-  </section>
-
-  <!-- ========================== GREW FROM JOY ====================== -->
-  <section class="section bg-white">
-    <div class="container split">
-      <div class="split__content">
-        <span class="eyebrow">Why Wildstar</span>
-        <h2>Wildstar grew from joy.</h2>
-        <p class="lead">From moments that make your cheeks hurt and connections that make people glow.</p>
-        <p>I’ll never get tired of watching two people find their person.</p>
-        <p><a class="btn btn--outline" href="/about/">My Story</a></p>
-      </div>
-      <div class="split__media">
-        <img src="/assets/img/imgg-gi3-_nzahcmk.png" alt="Two wedding rings resting on soft, warm light" loading="lazy">
+<!-- (3) INTRO -->
+<section class="band intro section">
+  <div class="container">
+    <h2>You don’t need someone to perform your ceremony.</h2>
+    <p class="lead">You need someone who can hold the room while it happens.</p>
+    <p class="lead">Every Wildstar ceremony is written by me, personally. Now a small team of officiants I’ve hand-picked helps bring those ceremonies to life, so we can be there for more couples, on more days.</p>
+    <div class="intro-actions">
+      <a class="btn" href="/contact/">Check Availability</a>
+      <hr class="intro-rule">
+      <div class="intro-badges">
+        <a href="https://www.theknot.com/marketplace/wildstar-weddings-spring-branch-tx-2100605" target="_blank" rel="noopener" aria-label="The Knot"><img src="/assets/img/badge-theknot.png" alt="As seen on The Knot"></a>
+        <a href="https://www.weddingwire.com/biz/wildstar-weddings/7e89b9706a442f8a.html" target="_blank" rel="noopener" aria-label="WeddingWire"><img src="/assets/img/badge-weddingwire.png" alt="As seen on WeddingWire"></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============================ GOOD FIT ========================== -->
-  <section class="section bg-cream-2 text-center">
-    <div class="container narrow">
-      <span class="eyebrow">Is this you?</span>
-      <h2>This might be a good fit if…</h2>
-      <ul class="fit-list">
-        <li>you want something personal, but not performative</li>
-        <li>you care about the words, but don’t want anything that feels scripted</li>
-        <li>you’d rather feel grounded than “perfect”</li>
-        <li>you want someone who can guide the moment without taking it over</li>
-        <li>you know the vibes, even if you can’t find the words</li>
-        <li>you want to actually be present for your ceremony</li>
-      </ul>
+<!-- (4-5) GREW FROM JOY + GOOD FIT -->
+<section class="band soft section text-center">
+  <div class="container narrow">
+    <h2>Wildstar grew from joy.</h2>
+    <p class="lead">From moments that make your cheeks hurt and connections that make people glow.</p>
+    <p>I’ll never get tired of watching two people find their person.</p>
+    <div class="leaf-divider"><img src="/assets/img/leaf.png" alt=""></div>
+    <h2>This might be a good fit if…</h2>
+    <ul class="fitlist">
+      <li>you want something personal, but not performative</li>
+      <li>you care about the words, but don’t want anything that feels scripted</li>
+      <li>you’d rather feel grounded than “perfect”</li>
+      <li>you want someone who can guide the moment without taking it over</li>
+      <li>you know the vibes, even if you can’t find the words</li>
+      <li>you want to actually be present for your ceremony</li>
+    </ul>
+  </div>
+</section>
+
+<!-- (6) WHAT IT FEELS LIKE -->
+<section class="band feels section text-center">
+  <div class="container narrow">
+    <span class="eyebrow">What it feels like to work with us</span>
+    <h2>I pay attention.</h2>
+    <p>Not just to what you say, but how you say it. The pauses, the tone, the things you almost skip over. That’s where the real story is.</p>
+    <p>On your wedding day, your officiant isn’t the main attraction. They’re there to guide the moment, keep things steady, and make sure you can actually be present, instead of worrying about what comes next.</p>
+    <ul class="fitlist">
+      <li>We shape a ceremony that sounds like you, not a template</li>
+      <li>We hold the pacing so nothing feels rushed or dragged out</li>
+      <li>We adjust in real time, because no ceremony ever unfolds exactly the same way</li>
+      <li>We make space for emotion without making it uncomfortable</li>
+    </ul>
+    <p style="margin-top:1.4rem">So when you’re standing there, you don’t have to think about anything else. You just get to be there, together.</p>
+  </div>
+</section>
+
+<!-- (7-8) TESTIMONIALS + CTA -->
+<section class="band testi section">
+  <div class="container">
+    <div class="text-center"><span class="eyebrow">Kind words</span></div>
+    <div class="testimonials narrow text-center">
+      <figure style="margin:0"><blockquote class="quote">“I was so impressed with how thoughtful and personal it felt, especially given the short amount of time she had. She was kind, professional, and made the whole process feel easy and stress-free.”</blockquote><figcaption class="quote__author">— Jessica &amp; Andrew</figcaption></figure>
+      <figure style="margin:0"><blockquote class="quote">“From our first conversation to the moment she pronounced us married, everything was seamless. She took the time to really get to know our story, and it showed in every word they spoke. We felt seen and celebrated in a way we didn’t expect.”</blockquote><figcaption class="quote__author">— Shelley &amp; Sarah</figcaption></figure>
+      <figure style="margin:0"><blockquote class="quote">“From the moment we met her, she brought such a calm, kind, and genuine presence. Our ceremony was peaceful, heartfelt, and exactly what we had hoped for.”</blockquote><figcaption class="quote__author">— Veronica &amp; Louis</figcaption></figure>
     </div>
-  </section>
-
-  <!-- ====================== WORKING WITH ME ======================== -->
-  <section class="section bg-white">
-    <div class="container split split--reverse">
-      <div class="split__content">
-        <span class="eyebrow">What it feels like to work with me</span>
-        <h2>I pay attention.</h2>
-        <p>Not just to what you say, but how you say it. The pauses, the tone, the things you almost skip over. That’s where the real story is.</p>
-        <p>On your wedding day, I’m not the main attraction. I’m there to guide the moment. To keep things steady. To make sure you can actually be present, instead of worrying about what comes next.</p>
-        <ul class="fit-list" style="margin-left:0">
-          <li>I’ll help shape a ceremony that sounds like you, not a template</li>
-          <li>I’ll hold the pacing so nothing feels rushed or dragged out</li>
-          <li>I’ll adjust in real time, because no ceremony ever unfolds exactly the same way</li>
-          <li>I’ll make space for emotion without making it uncomfortable</li>
-        </ul>
-        <p style="margin-top:1.5rem">So when you’re standing there, you don’t have to think about anything else. You just get to be there, together.</p>
-      </div>
-      <div class="split__media">
-        <img src="/assets/img/unsplash-image-xepikEyPgmI-2.jpg" alt="A single ivory bloom resting on soft fabric" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================== REVIEWS =========================== -->
-  <section class="section bg-charcoal text-center">
-    <div class="container narrow">
-      <span class="eyebrow">Kind words</span>
-      <div class="testimonials">
-        <figure>
-          <blockquote class="quote">“I was so impressed with how thoughtful and personal it felt, especially given the short amount of time she had. She was kind, professional, and made the whole process feel easy and stress-free.”</blockquote>
-          <figcaption class="quote__author">— Jessica &amp; Andrew</figcaption>
-        </figure>
-        <figure>
-          <blockquote class="quote">“From our first conversation to the moment she pronounced us married, everything was seamless. She took the time to really get to know our story, and it showed in every word they spoke. We felt seen and celebrated in a way we didn’t expect.”</blockquote>
-          <figcaption class="quote__author">— Shelley &amp; Sarah</figcaption>
-        </figure>
-        <figure>
-          <blockquote class="quote">“From the moment we met her, she brought such a calm, kind, and genuine presence. Our ceremony was peaceful, heartfelt, and exactly what we had hoped for.”</blockquote>
-          <figcaption class="quote__author">— Veronica &amp; Louis</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================= CTA ============================= -->
-  <section class="section bg-cream text-center">
-    <div class="container narrow">
-      <div class="leaf-divider"><img src="/assets/img/leaf.png" alt=""></div>
-      <h2>If this feels like the right fit,</h2>
+    <hr class="rule">
+    <div class="cta-block">
+      <h2 style="margin-bottom:.2rem">If this feels like the right fit,</h2>
       <p class="lead">I’d love to hear a little about what you’re planning.</p>
       <p><a class="btn" href="/contact/">Check Availability</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============================ FOOTER =========================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand"><img src="/assets/img/leaf.png" alt="">Wildstar Weddings</div>
-          <p>Romantic, personal wedding ceremonies in New Braunfels &amp; the Texas Hill Country.</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/wildstar_weddings" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.9.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52.01-4.76.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7-.06 1.24-.07 1.6-.07 4.76s.01 3.52.07 4.76c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.6.07 4.76.07s3.52-.01 4.76-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.6.07-4.76s-.01-3.52-.07-4.76c-.04-.9-.19-1.38-.32-1.7a2.86 2.86 0 0 0-.68-1.06 2.86 2.86 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.52 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 1 7.06 12 4.94 4.94 0 0 1 12 7.06Zm0 8.15A3.21 3.21 0 1 0 8.79 12 3.21 3.21 0 0 0 12 15.2Zm6.3-8.35a1.15 1.15 0 1 1-1.15-1.15 1.15 1.15 0 0 1 1.15 1.15Z"/></svg>
-            </a>
-            <a href="https://facebook.com/61584254587243/" aria-label="Facebook" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul class="footer-nav">
-            <li><a href="/about/">About</a></li>
-            <li><a href="/wedding-packages/">Wedding Packages</a></li>
-            <li><a href="/gallery/">Gallery</a></li>
-            <li><a href="/faqs/">FAQs</a></li>
-            <li><a href="/contact/">Contact</a></li>
-            <li><a href="/text-me/">Text Me</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Get in touch</h4>
-          <ul class="footer-contact">
-            <li><a href="mailto:wren@wildstarweddings.com">wren@wildstarweddings.com</a></li>
-            <li><a href="sms:+18302824090">Text: (830) 282-4090</a></li>
-            <li>New Braunfels, Texas</li>
-          </ul>
-          <div class="footer-badges">
-            <a href="https://www.theknot.com/marketplace/wildstar-weddings-spring-branch-tx-2100605" target="_blank" rel="noopener"><img src="/assets/img/badge-theknot.png" alt="As seen on The Knot"></a>
-            <a href="https://www.weddingwire.com/biz/wildstar-weddings/7e89b9706a442f8a.html" target="_blank" rel="noopener"><img src="/assets/img/badge-weddingwire.png" alt="As seen on WeddingWire"></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span data-year>2026</span> Wildstar Weddings. All rights reserved.</span>
-        <span><a href="/privacy-and-tos/">Privacy Policy &amp; Terms of Service</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="/assets/js/main.js"></script>
+<footer class="ws-footer">
+  <img class="leaf" src="/assets/img/leaf.png" alt="">
+  <div class="wm">Wildstar Weddings</div>
+  <nav>
+    <a href="/about/">About</a><a href="/wedding-packages/">Packages</a><a href="/gallery/">Gallery</a><a href="/faqs/">FAQs</a><a href="/contact/">Contact</a>
+  </nav>
+  <div class="legal"><a href="/privacy-and-tos/">Privacy Policy &amp; Terms of Service</a></div>
+  <div class="contact"><a href="mailto:wren@wildstarweddings.com">wren@wildstarweddings.com</a><br><a href="sms:+18302824090">(830) 282-4090</a> &middot; New Braunfels, Texas</div>
+  <div class="social"><a href="https://www.theknot.com/marketplace/wildstar-weddings-spring-branch-tx-2100605" target="_blank" rel="noopener" aria-label="The Knot"><img src="/assets/img/icon-knot.png" alt="The Knot"></a><a href="https://instagram.com/wildstar_weddings" target="_blank" rel="noopener" aria-label="Instagram"><img src="/assets/img/icon-instagram.png" alt="Instagram"></a><a href="https://facebook.com/61584254587243/" target="_blank" rel="noopener" aria-label="Facebook"><img src="/assets/img/icon-facebook.png" alt="Facebook"></a><a href="https://www.weddingwire.com/biz/wildstar-weddings/7e89b9706a442f8a.html" target="_blank" rel="noopener" aria-label="WeddingWire"><img src="/assets/img/icon-wire.png" alt="WeddingWire"></a></div>
+  <div class="bottom">&copy; <span data-year>2026</span> Wildstar Weddings. All rights reserved.</div>
+</footer>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
