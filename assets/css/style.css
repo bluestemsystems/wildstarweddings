@@ -104,6 +104,10 @@ p{margin:0 0 1.1em}
 .sage>.container{position:relative;z-index:2}
 /* when a sage feature band follows a hero, close the gap so its wave rises into the hero photo */
 .pagehero + .sage{margin-top:0}
+/* when a hero sits directly above the footer (about page), close the gap so the
+   sage footer wave rises into it, and add room so the wave clears the content */
+.pagehero:has(+ .ws-footer){padding-bottom:clamp(5rem,9vw,7rem)}
+.pagehero + .ws-footer{margin-top:0}
 
 /* paper section with the same overlay as the home hero/testimonials */
 .section--paper{position:relative;background:#f3ede0 url("/assets/img/unsplash-image-XFWiZTa2Ub0.jpg") center/cover;padding:clamp(7rem,13vw,9.5rem) 0 clamp(5.5rem,11vw,8rem)}
